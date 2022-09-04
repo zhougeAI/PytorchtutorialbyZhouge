@@ -1,0 +1,14 @@
+pretrained: False
+state_dict_path: ./checkpoints/epoch_8.pth
+train_dataset_path: C:/dataset/fruit_fresh_rotten/train/freshapples
+eval_dataset_path: C:/dataset/fruit_fresh_rotten/test/freshapples
+train_batch_size: 16
+eval_batch_size: 1
+sample_num: 10
+learning_rate: 0.001
+max_train_epochs: 100
+save_model_interval: 2
+sample_interval: 1
+eval_interval: 1
+train_results_path: ./train_results
+checkpoints_path: ./checkpoints
