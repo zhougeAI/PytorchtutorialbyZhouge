@@ -1,8 +1,3 @@
-数据集使用的是Kaggle的fresh_rotten_fruit_classify
-
-https://www.kaggle.com/sriramr/fruits-fresh-and-rotten-for-classification
-
-
 https://www.kaggle.com/datasets/sriramr/fruits-fresh-and-rotten-for-classification
 
 kaggle注册需要科学上网，注册成功后用迅雷下载很快。
