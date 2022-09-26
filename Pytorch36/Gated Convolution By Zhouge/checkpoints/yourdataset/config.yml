@@ -1,0 +1,58 @@
+# Basic parameters
+MODE: 1            # 1: train, 2: test, 3: eval
+MASK: 3             # 1: random block, 2: half, 3: external, 4: (external, random block), 5: (external, random block, half)
+SEED: 10            # random seed
+DEVICE: cuda     # DEVICE to be train on, cuda or cpu
+GPU: [0]            # list of gpu ids
+DEBUG: False            # turns on debugging mode True or False
+VERBOSE: 0          # turns on verbose mode in the output console
+
+# Image flist files
+# First use your image data path to generate flist files, then write down to the corresponding parameters.
+TRAIN_FLIST: flisks/crack_train.flist
+VAL_FLIST: flisks/crack_test.flist
+TEST_FLIST: flisks/crack_test.flist
+
+# Mask flist files
+# First use your mask data path to generate flist files, then write down to the corresponding parameters.
+TRAIN_MASK_FLIST: flisks/nvidia_imd_mask_train.flist
+VAL_MASK_FLIST: flisks/nvidia_imd_mask_test.flist
+TEST_MASK_FLIST: flisks/nvidia_imd_mask_test.flist
+
+# Training Parameters
+# Parameters about training, evaluation and test.
+LR: 0.0001                    # learning rate
+WEIGHT_DECAY: 0.0
+D2G_LR: 4                   # discriminator/generator learning rate ratio
+BETA1: 0.0                    # adam optimizer beta1
+BETA2: 0.9                    # adam optimizer beta2
+BATCH_SIZE: 1                 # input batch size for training
+INPUT_SIZE: 256               # input image size for training 0 for original size
+MAX_ITERS: 100001                # maximum number of iterations to train the model
+
+# Parameters about LOSS
+AE_LOSS: True
+L1_LOSS: True
+GLOBAL_DCGAN_LOSS_ALPHA: 1.
+GLOBAL_WGAN_LOSS_ALPHA: 1.
+GAN_LOSS_ALPHA: 0.005  # dcgan: 0.0008, wgan: 0.0005, onegan: 0.001
+L1_LOSS_ALPHA: [1.2, 1.2, 1.2, 1.2]
+GAN_WITH_MASK: True
+GAN_WITH_GUIDE: False
+DISCOUNTED_MASK: False
+LOAD_VGG_MODEL: True
+FEATURE_LOSS: True
+GRAMS_LOSS: True
+TV_LOSS: True
+TV_LOSS_ALPHA: 0.01
+FEATURE_LOSS_ALPHA: 0.01
+GRAMS_LOSS_ALPHA: 50
+SPATIAL_DISCOUNTING_GAMMA: 0.9
+
+# Parameters about train, eval and process.
+GAN_POOL_SIZE: 0              # fake images pool size
+SAVE_INTERVAL: 10000           # how many iterations to wait before saving model (0: never)
+SAMPLE_INTERVAL: 10000         # how many iterations to wait before sampling (0: never)
+SAMPLE_SIZE: 12               # number of images to sample
+EVAL_INTERVAL: 20000             # how many iterations to wait before model evaluation (0: never)
+LOG_INTERVAL: 1000             # how many iterations to wait before logging training status (0: never)
